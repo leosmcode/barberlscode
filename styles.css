@@ -1,0 +1,599 @@
+@font-face {
+    font-family: 'Special Gothic';
+    src: url('fonts/SpecialGothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    position: relative;
+}
+
+/* Header */
+header {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-circle {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-content {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero-content h1 {
+    font-family: 'Special Gothic', sans-serif;
+    font-size: 5rem;
+    color: #D4AF37;
+    margin-bottom: 1rem;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-family: 'Special Gothic', sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.agendar-btn {
+    font-family: 'Special Gothic', sans-serif;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    background-color: #D4AF37;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 1rem;
+    letter-spacing: 2px;
+}
+
+.agendar-btn:hover {
+    background-color: #fff;
+    transform: translateY(-5px);
+}
+
+/* Gallery */
+.gallery {
+    margin-top: 4rem;
+}
+
+.gallery h2 {
+    font-family: 'Special Gothic', sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    color: #D4AF37;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #111;
+    padding: 3rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    color: #D4AF37;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.modal-content h2 {
+    font-family: 'Special Gothic', sans-serif;
+    color: #D4AF37;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 1rem;
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    font-family: 'Special Gothic', sans-serif;
+    letter-spacing: 1px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #D4AF37;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.form-group input::placeholder {
+    color: #666;
+    font-family: 'Special Gothic', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background-color: #D4AF37;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button[type="submit"]:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+}
+
+.whatsapp-button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+.footer {
+    background-color: #111;
+    color: #fff;
+    padding: 4rem 0 0 0;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.footer-info h3 {
+    font-family: 'Special Gothic', sans-serif;
+    color: #D4AF37;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Special Gothic', sans-serif;
+    letter-spacing: 1px;
+}
+
+.footer-info i {
+    color: #D4AF37;
+    width: 20px;
+}
+
+.social-media {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.social-media a {
+    color: #D4AF37;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-media a i {
+    font-size: 2rem;
+}
+
+.social-media a:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.horario {
+    margin-top: 2rem;
+}
+
+.horario h4 {
+    font-family: 'Special Gothic', sans-serif;
+    color: #D4AF37;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-map {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+
+.footer-bottom {
+    background-color: #000;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer-bottom p {
+    color: #666;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+    }
+
+    .logo-circle {
+        width: 140px;
+        height: 140px;
+    }
+
+    .logo img {
+        height: 100px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-map {
+        height: 300px;
+    }
+
+    .modal-content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Estilos para os blocos de horários */
+.form-group label {
+    display: block;
+    color: #D4AF37;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Special Gothic', sans-serif;
+    letter-spacing: 1px;
+}
+
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.horario-bloco {
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 0.8rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Special Gothic', sans-serif;
+    letter-spacing: 1px;
+}
+
+.horario-bloco:hover {
+    background-color: #333;
+    border-color: #D4AF37;
+}
+
+.horario-bloco.selecionado {
+    background-color: #D4AF37;
+    color: #000;
+    border-color: #D4AF37;
+}
+
+.horario-bloco.ocupado {
+    background-color: #ff4444;
+    color: #fff;
+    cursor: not-allowed;
+    border-color: #ff4444;
+    opacity: 0.8;
+}
+
+/* Estilização da barra de rolagem dos horários */
+.horarios-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.horarios-grid::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 3px;
+}
+
+.horarios-grid::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 3px;
+}
+
+.horarios-grid::-webkit-scrollbar-thumb:hover {
+    background: #b38f2d;
+}
+
+.admin-button {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 9999;
+}
+
+.admin-button button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #D4AF37;
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-button button:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+}
+
+.admin-section {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.admin-section h3 {
+    font-family: 'Special Gothic', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#loginForm {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#loginForm input {
+    font-family: 'Special Gothic', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#loginForm button {
+    font-family: 'Special Gothic', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+.horarios-ocupados {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.horario-ocupado-item {
+    background-color: #ff4444;
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.horario-ocupado-item button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.2rem;
+}
+
+.horario-ocupado-item button:hover {
+    color: #D4AF37;
+}
+
+.logout-btn {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: #ff4444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #cc0000;
+} 

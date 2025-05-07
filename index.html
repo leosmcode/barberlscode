@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catarina Cortes - Barbearia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    
+    <header>
+        <div class="logo-circle">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Catarina Cortes">
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="hero-content">
+            <h1>CATARINA CORTES</h1>
+            <p>Trabalhamos com horários exclusivos.</p>
+            <p>Alcance o corte que combina com sua personalidade.</p>
+            <button id="agendarBtn" class="agendar-btn">AGENDAR HORÁRIO</button>
+        </div>
+
+        <section class="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/leo1.png" alt="Galeria 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/leo2.png" alt="Galeria 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/leo3.png" alt="Galeria 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/lo4.png" alt="Galeria 4">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone"></i> (47) 99199-9993</p>
+                <p><i class="fas fa-map-marker-alt"></i> R. Lauro Muller, 306 - Centro, Itajaí - SC</p>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/catarinacortes__/" target="_blank" title="Siga-nos no Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="horario">
+                    <h4>Horário de Funcionamento</h4>
+                    <p>Segunda a Sábado: 9h às 20h</p>
+                    <p>Domingo: Fechado</p>
+                </div>
+            </div>
+            <div class="footer-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.7641777339636!2d-48.66493792374444!3d-26.908987094701736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8cba475800001%3A0x2c0b78e19ef1a69e!2sR.%20Lauro%20M%C3%BCller%2C%20306%20-%20Centro%2C%20Itaja%C3%AD%20-%20SC%2C%2088301-400!5e0!3m2!1spt-BR!2sbr!4v1708561128045!5m2!1spt-BR!2sbr"
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Catarina Cortes - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Agende seu Horário</h2>
+            <form id="agendamentoForm">
+                <div class="form-group">
+                    <input type="text" id="nome" placeholder="Seu Nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="contato" placeholder="Seu Telefone" required>
+                </div>
+                <div class="form-group">
+                    <label>Selecione um horário:</label>
+                    <div class="horarios-grid" id="horariosGrid"></div>
+                    <input type="hidden" id="horarioSelecionado" required>
+                </div>
+                <button type="submit">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="whatsapp-button">
+        <a href="https://wa.me/554799199993" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <div class="admin-button">
+        <button id="adminBtn"><i class="fas fa-user-shield"></i></button>
+    </div>
+
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Gerenciamento de Horários</h2>
+            <div id="adminLogin" class="admin-section">
+                <h3>Login Administrativo</h3>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="password" id="senha" placeholder="Senha" required>
+                    </div>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+            <div id="adminPanel" class="admin-section" style="display: none;">
+                <h3>Horários Ocupados</h3>
+                <div class="horarios-ocupados" id="horariosOcupadosList"></div>
+                <button id="logoutBtn" class="logout-btn">Sair</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
